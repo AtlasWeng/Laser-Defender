@@ -46,9 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Entities\Enemy\EnemyBehavior.cs" />
+     <Compile Include="Assets\Entities\EnemySpawn\EnemySpawner.cs" />
+     <Compile Include="Assets\Entities\EnemySpawn\Position.cs" />
      <Compile Include="Assets\Entities\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\Shredder.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
