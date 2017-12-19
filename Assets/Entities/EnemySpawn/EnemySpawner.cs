@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour {
 	public GameObject enemyPrefab;
 	public float spawnWidth = 10f;
 	public float spawnHeight = 5f;
-
+	public float spawnDelay = .5f;
 
 	// define the screen size
 
@@ -22,10 +22,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		foreach (Transform child in transform) {
-			GameObject enemy = Instantiate (enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
-			enemy.transform.parent = child.transform;
-		}
+		RespawnEnemies();
 
 		// define the boundary of the scree
 		Vector3 leftMost;
@@ -64,6 +61,53 @@ public class EnemySpawner : MonoBehaviour {
 			movingRight = false;
 		} else if (leftEdgeOfFormation <= xMin) {
 			movingRight = true;
+		}
+
+		if (AllMembersAreDead ()) {
+			RespawnEnemiesOnebyOne();
+		}
+	}
+
+	Transform NextFreePosition ()
+	{
+		foreach (Transform ChildPositionGameObject in transform) {
+			if (ChildPositionGameObject.childCount == 0) {
+				return ChildPositionGameObject;
+			}
+		}
+
+		return null;
+	}
+
+	bool AllMembersAreDead(){
+		foreach (Transform childPositionGameObject in transform) {
+			if (childPositionGameObject.childCount > 0) {
+				return false;
+			}
+		}
+		Debug.Log("True");
+		return true;
+	}
+
+	void RespawnEnemies(){
+		foreach(Transform child in transform){
+			GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
+			enemy.transform.parent = child.transform;
+		}
+	}
+
+	void RespawnEnemiesOnebyOne ()
+	{
+		Transform enemyFreePosition = NextFreePosition ();
+
+		if (enemyFreePosition) {
+			foreach (Transform child in transform) {
+				GameObject enemy = Instantiate (enemyPrefab, enemyFreePosition.position, Quaternion.identity) as GameObject;
+				enemy.transform.parent = enemyFreePosition;
+			}
+
+			// respawn the enemy after the spawn delay
+			Invoke("RespawnEnemiesOnebyOne", spawnDelay);
 		}
 	}
 }

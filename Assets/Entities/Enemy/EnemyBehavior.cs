@@ -34,6 +34,7 @@ public class EnemyBehavior : MonoBehaviour {
 		if (probability > Random.value) {
 			EnemyFire();
 		}
-
 	}
+
+
 }
