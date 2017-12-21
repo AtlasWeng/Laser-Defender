@@ -10,6 +10,19 @@ public class EnemyBehavior : MonoBehaviour {
 	public GameObject projectilePrefab;
 	public float shotsPerSeconds = .5f;
 
+	// variable about score
+	ScoreKeeper scoreKeeper;
+	public int scoreValue = 150;
+
+	// SFX
+	public AudioClip enemyFiresSFX;
+	public AudioClip enemyDestroiedSFX;
+
+	void Start(){
+		// define the score keeper
+		scoreKeeper = GameObject.Find("Score").GetComponent<ScoreKeeper>();
+	}
+
 	void OnTriggerEnter2D (Collider2D collider)
 	{
 		Projectile laser = collider.gameObject.GetComponent<Projectile> ();
@@ -17,15 +30,21 @@ public class EnemyBehavior : MonoBehaviour {
 			enemyHealth -= laser.GetDamage();
 			laser.Hit();
 			if (enemyHealth <= 0) {
-				Destroy(gameObject);
+				Die();
 			}
 		}
 	}
 
+	void Die(){
+		AudioSource.PlayClipAtPoint(enemyDestroiedSFX, transform.position);
+		Destroy(gameObject);
+		scoreKeeper.Score(scoreValue);
+	}
+
 	void EnemyFire(){
-		Vector3 startPosition = transform.position + new Vector3(0, -.75f, 0);
-		GameObject projectile = Instantiate(projectilePrefab, startPosition, Quaternion.Euler(180, 0, 0));
+		GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(180, 0, 0));
 		projectile.GetComponent<Rigidbody2D>().velocity = Vector2.down * projectileSpeed;
+		AudioSource.PlayClipAtPoint(enemyFiresSFX, transform.position);
 	}
 
 	void Update ()

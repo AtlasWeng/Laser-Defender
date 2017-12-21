@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		RespawnEnemies();
+		RespawnEnemiesOnebyOne();
 
 		// define the boundary of the scree
 		Vector3 leftMost;
@@ -101,10 +101,8 @@ public class EnemySpawner : MonoBehaviour {
 		Transform enemyFreePosition = NextFreePosition ();
 
 		if (enemyFreePosition) {
-			foreach (Transform child in transform) {
-				GameObject enemy = Instantiate (enemyPrefab, enemyFreePosition.position, Quaternion.identity) as GameObject;
-				enemy.transform.parent = enemyFreePosition;
-			}
+			GameObject enemy = Instantiate (enemyPrefab, enemyFreePosition.position, Quaternion.identity) as GameObject;
+			enemy.transform.parent = enemyFreePosition;
 
 			// respawn the enemy after the spawn delay
 			Invoke("RespawnEnemiesOnebyOne", spawnDelay);

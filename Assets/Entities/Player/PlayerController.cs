@@ -14,19 +14,24 @@ public class PlayerController : MonoBehaviour {
 	float xMax;
 	float xMin;
 
+	// SFX
+	[Header("Sound Track")]
+	public AudioClip playerFiresSFX;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		float distance = transform.position.z - Camera.main.transform.position.z;
-		Vector3 leftMost = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
-		Vector3 rightMost = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance));
+		Vector3 leftMost = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, distance));
+		Vector3 rightMost = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, distance));
 		xMin = leftMost.x + padding;
 		xMax = rightMost.x - padding;
 	}
 
 	void Fire(){
-		Vector3 startPosition = transform.position + new Vector3(0, 0.75f, 0);
-		GameObject beam = Instantiate(projectile, startPosition, Quaternion.identity) as GameObject;
+		GameObject beam = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
 		beam.GetComponent<Rigidbody2D>().velocity = Vector2.up * beamSpeed;
+		AudioSource.PlayClipAtPoint(playerFiresSFX, transform.position);
 	}
 
 	void OnTriggerEnter2D (Collider2D collider)
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 			laser.Hit();
 			if (health <= 0) {
 				Destroy(gameObject);
+				GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Win Screen");
 			}
 		}
 	}

@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1276
     height: 705
-  m_MinSize: {x: 913, y: 442}
-  m_MaxSize: {x: 22008, y: 10021}
+  m_MinSize: {x: 917, y: 421}
+  m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 13835
+  controlID: 31659
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,10 +122,10 @@ MonoBehaviour:
     y: 0
     width: 561
     height: 705
-  m_MinSize: {x: 202, y: 442}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 421}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 13836
+  controlID: 31660
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 5}
   - {fileID: 6}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -179,14 +179,14 @@ MonoBehaviour:
     width: 559
     height: 280
   m_SceneLighting: 1
-  lastFramingTime: 363511.30371803045
+  lastFramingTime: 547569.7560930252
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 2.35, y: 0, z: -10}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 2.35, y: 0, z: -10}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -213,9 +213,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.88181
+    m_Target: 180.64026
     speed: 2
-    m_Value: 14.88181
+    m_Value: 180.64026
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -251,12 +251,12 @@ MonoBehaviour:
     x: 3
     y: 94
     width: 559
-    height: 341
+    height: 280
   m_ViewPositions:
     m_KeySerializationHelper:
     - {fileID: 1107003488978774826, guid: 1ef995ee8b45b4af7a8600da9f78a2b1, type: 2}
     m_ValueSerializationHelper:
-    - {x: 285.40002, y: 204.6}
+    - {x: 512.40295, y: 188.00012}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: 1ef995ee8b45b4af7a8600da9f78a2b1,
     type: 2}
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 301
     width: 561
     height: 404
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -347,8 +347,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 705
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -382,9 +382,9 @@ MonoBehaviour:
     height: 684
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0cfeeff
-    m_LastClickedID: -1126448
-    m_ExpandedIDs: 2031f5ffa619f9ff54eafcff56eafcff000000008e2e0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 8ac8e0ffa0c8e0ffba48e1ff00a0e1ff96bae1ff9ed9e1ff80dae1ff96dbe1ffbedce1ff6a37e2ff8c51e2ff48d5e2ff44d6e2ff64d7e2ff9ed8e2ffded9e2fff2dae2ff0c7ee3ff72c5e3ff14f0e3ff5af3e3ffaa4be4ffa619f9ff40eafcff54eafcff56eafcff000000008e2e0000428a00001a8e0000d28f0000509300007a9700008e9c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -468,19 +468,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Entities/Enemy
+    - Assets/_Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Entities/Enemy
+  - Assets/_Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Moonhq/Documents/Game project/LaserDefender
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c2b0000
-    m_LastClickedID: 11164
-    m_ExpandedIDs: 2e250000962b0000ffffff7f
+    m_SelectedIDs: 04260000
+    m_LastClickedID: 9732
+    m_ExpandedIDs: 2e250000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,7 +508,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 2e250000962b0000ffffff7f
+    m_ExpandedIDs: 2e250000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,8 +533,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d0cfeeff
-    m_LastClickedInstanceID: -1126448
+    m_SelectedInstanceIDs: a0c8e0ff
+    m_LastClickedInstanceID: -2045792
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -615,7 +615,7 @@ MonoBehaviour:
     y: 94
     width: 275
     height: 684
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 328.0005}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -158
